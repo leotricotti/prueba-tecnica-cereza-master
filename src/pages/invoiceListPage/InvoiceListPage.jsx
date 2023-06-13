@@ -26,9 +26,9 @@ function InvoicesListPages({ invoices }) {
       }`}
     >
       <InvoiceListHeader
-        data={invoices}
         link={"/invoice"}
         showForm={showForm}
+        setInvoiceId={setInvoiceId}
         setIsLoading={setIsLoading}
         setShowInvoice={setShowInvoice}
         onClick={() => setShowForm(true)}

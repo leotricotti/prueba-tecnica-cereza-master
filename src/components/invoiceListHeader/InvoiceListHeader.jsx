@@ -1,26 +1,26 @@
-import InvoiceListSearch from "../invoiceListSearch/InvoiceListSearch";
 import Button from "../button/Button";
 import styles from "./invoiceListHeader.module.css";
+import InvoiceListSearch from "../invoiceListSearch/InvoiceListSearch";
 
 function InvoiceListHeader({
-  data,
   link,
   onClick,
+  setInvoiceId,
   setIsLoading,
   setShowInvoice,
 }) {
   return (
     <header className={styles.headerContainer}>
       <InvoiceListSearch
-        data={data}
-        setShowInvoice={() => setShowInvoice(true)}
         setIsLoading={setIsLoading}
+        setInvoiceId={setInvoiceId}
+        setShowInvoice={() => setShowInvoice(true)}
       />
       <Button
-        text="Crear factura"
-        onClick={onClick}
-        styles={styles.button}
         link={link}
+        onClick={onClick}
+        text="Crear factura"
+        styles={styles.button}
       />
     </header>
   );

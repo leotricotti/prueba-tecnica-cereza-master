@@ -1,26 +1,23 @@
 import { useState, useContext } from "react";
+import styles from "./invoiceListSearch.module.css";
 import { DataContext } from "../../context/dataContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import StoredInvoice from "../storedInvoice/StoredInvoice";
-import styles from "./invoiceListSearch.module.css";
 
-function InvoiceListSeach({ setShowInvoice, setIsLoading }) {
+function InvoiceListSeach({ setInvoiceId, setShowInvoice, setIsLoading }) {
   const { invoices } = useContext(DataContext);
-  const [inputValue, setInputValue] = useState("");
   const [showMenu, setShowMenu] = useState(false);
+  const [inputValue, setInputValue] = useState("");
   const [matchingOptions, setMatchingOptions] = useState([]);
-  const data = invoices;
 
   const handleInputChange = (event) => {
     const inputValue = event.target.value;
-    setInputValue(inputValue);
-
-    const matchingOptions = data.invoices.filter((item) =>
+    const matchingOptions = invoices.invoices.filter((item) =>
       item.customer.toLowerCase().includes(inputValue.toLowerCase())
     );
-    setMatchingOptions(matchingOptions);
     setShowMenu(true);
+    setInputValue(inputValue);
+    setMatchingOptions(matchingOptions);
   };
 
   const handleOptionClick = (option) => {
@@ -28,6 +25,8 @@ function InvoiceListSeach({ setShowInvoice, setIsLoading }) {
     setIsLoading(true);
     setShowInvoice(true);
     setMatchingOptions(option);
+    setInvoiceId(option.number);
+    console.log(option.number);
   };
 
   return (
@@ -52,12 +51,6 @@ function InvoiceListSeach({ setShowInvoice, setIsLoading }) {
             </li>
           ))}
         </ul>
-      )}
-      {matchingOptions.length > 0 && (
-        <StoredInvoice
-          setIsLoading={setIsLoading}
-          setShowInvoice={setShowInvoice}
-        />
       )}
     </div>
   );
