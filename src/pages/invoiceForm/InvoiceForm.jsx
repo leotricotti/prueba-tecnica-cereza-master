@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from "react";
+import { useEffect, useContext, useState } from "react";
 import styles from "./invoiceForm.module.css";
 import Spinner from "../../components/spinner/Spinner";
 import { DataContext } from "../../context/dataContext";
@@ -10,13 +10,14 @@ import FormHeaderMain from "../../components/formHeaderMain/FormHeadeMain";
 function InvoiceForm() {
   const [isLoading, setIsLoading] = useState(true);
   const localDate = new Date().toLocaleDateString();
+  const [invoiceNumber, setInvoiceNumber] = useState(parseInt(0));
   const { selectedProducts, setSelectedProducts, invoices, onSaveInvoice } =
     useContext(DataContext);
   const indexSelected = parseInt(selectedProducts.length - 1);
-  const productSelected = selectedProducts?.map((product) => product.title);
   const priceItem = selectedProducts?.map((product) => product.price);
+  const productSelected = selectedProducts?.map((product) => product.title);
   const [invoiceData, setInvoiceData] = useState({
-    number: "",
+    number: "0000" + invoiceNumber,
     customer: "",
     address: "",
     date: "",
@@ -36,7 +37,6 @@ function InvoiceForm() {
     invoiceData;
   const detail = invoiceData.details[selectedProducts.length - 1];
   const { quantity, totalItem } = detail || {};
-  const invoiceNumber = invoices.invoices.length + 1;
 
   const calculateItemTotal = () => {
     const totalItems = invoiceData.details.reduce((accumulator, detail) => {
@@ -45,7 +45,6 @@ function InvoiceForm() {
     }, 0);
     return totalItems.toFixed(2);
   };
-
   const itemTotal = calculateItemTotal();
 
   useEffect(() => {
@@ -55,29 +54,30 @@ function InvoiceForm() {
   }, []);
 
   useEffect(() => {
-    handleDateChange(localDate);
-    handelNumberChange(invoiceNumber || 0);
     if (selectedProducts.length === 0) {
       return;
     }
+    handleDateChange(localDate);
     handleTaxesChange(subtotal);
     handleSubtotalChange(itemTotal);
     handleTotalChange(subtotal, taxes);
+    setInvoiceNumber(invoices.invoices.length + 1);
+    handelNumberChange(invoiceNumber || 0);
     handleItemPriceChange(
       indexSelected,
       "itemPrice",
       priceItem[selectedProducts.length - 1]
-    );
-    handleProductChange(
-      indexSelected,
-      "product",
-      productSelected[selectedProducts.length - 1]
     );
     handleTotalItemChange(
       indexSelected,
       "totalItem",
       priceItem[selectedProducts.length - 1],
       quantity
+    );
+    handleProductChange(
+      indexSelected,
+      "product",
+      productSelected[selectedProducts.length - 1]
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedProducts, quantity, number, totalItem, subtotal, taxes]);
@@ -87,12 +87,10 @@ function InvoiceForm() {
     onSaveInvoice(invoiceData);
   };
 
-  console.log(invoiceData);
-
-  const handelNumberChange = (number) => {
+  const handleDateChange = (date) => {
     setInvoiceData((prevData) => ({
       ...prevData,
-      number: "0000" + number,
+      date: date,
     }));
   };
 
@@ -110,10 +108,10 @@ function InvoiceForm() {
     }));
   };
 
-  const handleDateChange = (date) => {
+  const handelNumberChange = (number) => {
     setInvoiceData((prevData) => ({
       ...prevData,
-      date: date,
+      number: "0000" + number,
     }));
   };
 

@@ -9,6 +9,8 @@ const DataProvider = ({ children }) => {
   const [matchingOptions, setMatchingOptions] = useState([]);
   const [selectedProducts, setSelectedProducts] = useState([]);
 
+  console.log(invoices);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -36,6 +38,7 @@ const DataProvider = ({ children }) => {
     setInvoices(updatedInvoices);
 
     localStorage.setItem("invoices", JSON.stringify(updatedInvoices));
+    alert("Factura guardada con éxito");
   };
 
   const value = {
