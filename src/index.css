@@ -1,0 +1,86 @@
+/*
+=============
+Fonts
+=============
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/*
+=============
+Variables
+=============
+*/
+
+:root {
+  --font-family: "Roboto", sans-serif;
+  --color-primary-bg: #eee;
+  --color-secondary-bg: #003358;
+  --color-bg-overlay: rgb(122, 122, 122);
+  --color-bg-white: #fff;
+  --color-primary-text: #0d0c22;
+  --color-secondary-text: #fff;
+  --color-secondary-light: rgb(255, 255, 255, 0.3);
+  --color-input-bg: rgba(0, 0, 0, 0.1);
+  --color-bg-spinner: rgba(0, 0, 0, 0.5);
+}
+
+/*
+=============
+Global Styles
+=============
+*/
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1rem;
+  font-family: var(--font-family);
+  color: var(--color-primary-text);
+  background-color: var(--color-primary-bg);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family);
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  background-color: var(--color-input-bg);
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.1rem;
+}
+
+input:focus {
+  outline: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 1px;
+  padding: 0.1rem;
+}

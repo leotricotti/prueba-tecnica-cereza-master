@@ -1,0 +1,26 @@
+.invoiceFooterContainer {
+  width: 100%;
+  max-width: 23.4375rem;
+  font-size: 0.625rem;
+  position: relative;
+  top: -0.35rem;
+  margin: 0 auto;
+}
+
+.totalItems {
+  position: absolute;
+  top: 0.05rem;
+  right: 3rem;
+}
+
+.taxes {
+  position: absolute;
+  right: 3rem;
+  top: 1rem;
+}
+
+.total {
+  position: absolute;
+  right: 3rem;
+  top: 2rem;
+}

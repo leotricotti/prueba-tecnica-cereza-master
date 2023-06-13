@@ -1,0 +1,234 @@
+{
+  "invoices": [
+    {
+      "number": "0001",
+      "customer": "Juan Pérez",
+      "address": "Calle 123, Ciudad",
+      "date": "01/05/2023",
+      "details": [
+        {
+          "product": "iPhone 9",
+          "itemPrice": 549,
+          "quantity": 1,
+          "totalItem": 549
+        },
+        {
+          "product": "MacBook Pro",
+          "itemPrice": 1749,
+          "quantity": 1,
+          "totalItem": 1749
+        }
+      ],
+      "subtotal": 2298,
+      "taxes": 482.58,
+      "total": 2780.58
+    },
+    {
+      "number": "0002",
+      "customer": "María López",
+      "address": "Avenida Principal, Pueblo",
+      "date": "02/05/2023",
+      "details": [
+        {
+          "product": "Samsung Universe 9",
+          "itemPrice": 1249,
+          "quantity": 1,
+          "totalItem": 1249
+        },
+        {
+          "product": "Samsung Galaxy Book",
+          "itemPrice": 1499,
+          "quantity": 1,
+          "totalItem": 1499
+        }
+      ],
+      "subtotal": 2748,
+      "taxes": 577.08,
+      "total": 3325.08
+    },
+    {
+      "number": "0003",
+      "customer": "Roberto García",
+      "address": "Calle Mayor, Ciudad",
+      "date": "03/05/2023",
+      "details": [
+        {
+          "product": "OPPOF19",
+          "itemPrice": 280,
+          "quantity": 1,
+          "totalItem": 280
+        },
+        {
+          "product": "Huawei P30",
+          "itemPrice": 499,
+          "quantity": 1,
+          "totalItem": 499
+        }
+      ],
+      "subtotal": 779,
+      "taxes": 163.59,
+      "total": 942.59
+    },
+    {
+      "number": "0004",
+      "customer": "Ana Martínez",
+      "address": "Avenida Principal, Pueblo",
+      "date": "04/05/2023",
+      "details": [
+        {
+          "product": "iPhone X",
+          "itemPrice": 899,
+          "quantity": 1,
+          "totalItem": 899
+        },
+        {
+          "product": "Microsoft Surface Laptop 4",
+          "itemPrice": 1499,
+          "quantity": 1,
+          "totalItem": 1499
+        }
+      ],
+      "subtotal": 2398,
+      "taxes": 503.58,
+      "total": 2901.58
+    },
+    {
+      "number": "0005",
+      "customer": "David Fernández",
+      "address": "Calle 456, Ciudad",
+      "date": "05/05/2023",
+      "details": [
+        {
+          "product": "Infinix INBOOK",
+          "itemPrice": 1099,
+          "quantity": 1,
+          "totalItem": 1099
+        },
+        {
+          "product": "HP Pavilion 15-DK1056WM",
+          "itemPrice": 1099,
+          "quantity": 1,
+          "totalItem": 1099
+        }
+      ],
+      "subtotal": 2198,
+      "taxes": 461.58,
+      "total": 2659.58
+    },
+    {
+      "number": "0006",
+      "customer": "Laura Gómez",
+      "address": "Avenida Central, Pueblo",
+      "date": "06/05/2023",
+      "details": [
+        {
+          "product": "perfume Oil",
+          "itemPrice": 13,
+          "quantity": 1,
+          "totalItem": 13
+        },
+        {
+          "product": "Brown Perfume",
+          "itemPrice": 40,
+          "quantity": 1,
+          "totalItem": 40
+        }
+      ],
+      "subtotal": 53,
+      "taxes": 11.13,
+      "total": 64.13
+    },
+    {
+      "number": "0007",
+      "customer": "Miguel Rodríguez",
+      "address": "Calle 789, Ciudad",
+      "date": "07/05/2023",
+      "details": [
+        {
+          "product": "Fog Scent Xpressio Perfume",
+          "itemPrice": 13,
+          "quantity": 1,
+          "totalItem": 13
+        },
+        {
+          "product": "Non-Alcoholic Concentrated Perfume Oil",
+          "itemPrice": 120,
+          "quantity": 1,
+          "totalItem": 120
+        }
+      ],
+      "subtotal": 133,
+      "taxes": 27.93,
+      "total": 160.93
+    },
+    {
+      "number": "0008",
+      "customer": "Olivia Torres",
+      "address": "Avenida Principal, Pueblo",
+      "date": "08/05/2023",
+      "details": [
+        {
+          "product": "perfume Oil",
+          "itemPrice": 13,
+          "quantity": 1,
+          "totalItem": 13
+        },
+        {
+          "product": "Brown Perfume",
+          "itemPrice": 40,
+          "quantity": 1,
+          "totalItem": 40
+        }
+      ],
+      "subtotal": 53,
+      "taxes": 11.13,
+      "total": 64.13
+    },
+    {
+      "number": "0009",
+      "customer": "Lucas Herrera",
+      "address": "Calle Mayor, Ciudad",
+      "date": "09/05/2023",
+      "details": [
+        {
+          "product": "Huawei P40",
+          "itemPrice": 699,
+          "quantity": 1,
+          "totalItem": 699
+        },
+        {
+          "product": "Xiaomi Mi 11",
+          "itemPrice": 799,
+          "quantity": 1,
+          "totalItem": 799
+        }
+      ],
+      "subtotal": 1498,
+      "taxes": 314.58,
+      "total": 1812.58
+    },
+    {
+      "number": "0010",
+      "customer": "Valentina Castro",
+      "address": "Avenida Central, Pueblo",
+      "date": "10/05/2023",
+      "details": [
+        {
+          "product": "Samsung Galaxy A32",
+          "itemPrice": 299,
+          "quantity": 1,
+          "totalItem": 299
+        },
+        {
+          "product": "Motorola Moto G10",
+          "itemPrice": 199,
+          "quantity": 1,
+          "totalItem": 199
+        }
+      ],
+      "subtotal": 498,
+      "taxes": 104.58,
+      "total": 602.58
+    }
+  ]
+}
