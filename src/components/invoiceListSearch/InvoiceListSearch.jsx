@@ -28,15 +28,11 @@ function InvoiceListSeach({ setShowInvoice, setIsLoading }) {
     setIsLoading(true);
     setShowInvoice(true);
     setMatchingOptions(option);
-    setInputValue(option.customer);
   };
-
-  console.log(inputValue);
 
   return (
     <div className={styles.searchBar}>
       <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.icon} />
-
       <input
         type="text"
         placeholder="Buscar factura..."
@@ -59,8 +55,8 @@ function InvoiceListSeach({ setShowInvoice, setIsLoading }) {
       )}
       {matchingOptions.length > 0 && (
         <StoredInvoice
-          setShowInvoice={setShowInvoice}
           setIsLoading={setIsLoading}
+          setShowInvoice={setShowInvoice}
         />
       )}
     </div>

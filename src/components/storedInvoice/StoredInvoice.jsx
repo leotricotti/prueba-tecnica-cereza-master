@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Button from "../button/Button";
 import styles from "./storedInvoice.module.css";
 
-function StoredInvoice({ setShowInvoice, invoiceId, setIsLoading }) {
+function StoredInvoice({ invoiceId, setIsLoading, setShowInvoice }) {
   const { invoices } = useContext(DataContext);
   const [invoice, setInvoice] = useState(null);
   const invoiceData = invoices;

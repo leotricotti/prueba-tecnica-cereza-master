@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import InvoiceList from "./pages/invoiceList/InvoiceList";
-import InvoiceForm from "./pages/invoiceForm/InvoiceForm";
 import Spinner from "./components/spinner/Spinner";
+import InvoiceForm from "./pages/invoiceForm/InvoiceForm";
+import InvoiceList from "./pages/invoiceListPage/InvoiceListPage";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);

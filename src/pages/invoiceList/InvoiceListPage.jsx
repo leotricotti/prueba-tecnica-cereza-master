@@ -26,25 +26,25 @@ function InvoicesList({ invoices }) {
       }`}
     >
       <InvoiceListHeader
-        onClick={() => setShowForm(true)}
+        data={invoices}
         link={"/invoice"}
         showForm={showForm}
-        data={invoices}
-        setShowInvoice={setShowInvoice}
         setIsLoading={setIsLoading}
+        setShowInvoice={setShowInvoice}
+        onClick={() => setShowForm(true)}
       />
       <InvoiceList
         invoices={invoices}
-        setShowInvoice={setShowInvoice}
         setInvoiceId={setInvoiceId}
         setIsLoading={setIsLoading}
+        setShowInvoice={setShowInvoice}
       />
       {showInvoice && (
         <StoredInvoice
-          setShowInvoice={setShowInvoice}
           invoiceId={invoiceId}
           invoiceData={invoices}
           setIsLoading={setIsLoading}
+          setShowInvoice={setShowInvoice}
         />
       )}
     </div>
