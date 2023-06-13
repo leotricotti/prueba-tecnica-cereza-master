@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Spinner from "./components/spinner/Spinner";
 import InvoiceForm from "./pages/invoiceForm/InvoiceForm";
-import InvoiceList from "./pages/invoiceListPage/InvoiceListPage";
+import InvoiceListPage from "./pages/invoiceListPage/InvoiceListPage";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -17,7 +17,7 @@ function App() {
     <Spinner />
   ) : (
     <Routes>
-      <Route path="/" element={<InvoiceList />} />
+      <Route path="/" element={<InvoiceListPage />} />
       <Route path="/invoice" element={<InvoiceForm />} />
     </Routes>
   );

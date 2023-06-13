@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import InvoiceListHeader from "../../components/invoiceListHeader/InvoiceListHeader";
-import StoredInvoice from "../../components/storedInvoice/StoredInvoice";
-import InvoiceList from "../../components/invoiceList/InvoiceList";
+import styles from "./invoiceListPage.module.css";
 import Spinner from "../../components/spinner/Spinner";
-import styles from "./invoiceList.module.css";
+import InvoiceList from "../../components/invoiceList/InvoiceList";
+import StoredInvoice from "../../components/storedInvoice/StoredInvoice";
+import InvoiceListHeader from "../../components/invoiceListHeader/InvoiceListHeader";
 
-function InvoicesList({ invoices }) {
+function InvoicesListPages({ invoices }) {
   const [invoiceId, setInvoiceId] = useState("");
   const [showForm, setShowForm] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -51,4 +51,4 @@ function InvoicesList({ invoices }) {
   );
 }
 
-export default InvoicesList;
+export default InvoicesListPages;
