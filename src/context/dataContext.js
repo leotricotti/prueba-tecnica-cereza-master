@@ -38,7 +38,6 @@ const DataProvider = ({ children }) => {
     setInvoices(updatedInvoices);
 
     localStorage.setItem("invoices", JSON.stringify(updatedInvoices));
-    alert("Factura guardada con éxito");
   };
 
   const value = {

@@ -1,7 +1,9 @@
 import { useEffect, useContext, useState } from "react";
+import Swal from "sweetalert2";
 import styles from "./invoiceForm.module.css";
 import Spinner from "../../components/spinner/Spinner";
 import { DataContext } from "../../context/dataContext";
+import withReactContent from "sweetalert2-react-content";
 import FormBody from "../../components/formBody/FormBody";
 import FormFooter from "../../components/formFooter/FormFooter";
 import FormHeader from "../../components/formHeader/FormHeader";
@@ -85,6 +87,18 @@ function InvoiceForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSaveInvoice(invoiceData);
+
+    Swal.fire({
+      title: "Desea guardar los cambios?",
+      showCancelButton: true,
+      confirmButtonText: "Guardar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Información guardada con exito", "", "success");
+      } else if (result.isDenied) {
+        Swal.fire("Información no guardada", "", "info");
+      }
+    });
   };
 
   const handleDateChange = (date) => {
