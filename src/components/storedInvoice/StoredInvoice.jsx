@@ -1,15 +1,12 @@
-import { useContext } from "react";
-import { DataContext } from "../../context/dataContext";
-import { useEffect, useState } from "react";
 import Button from "../button/Button";
 import styles from "./storedInvoice.module.css";
+import { useContext, useEffect, useState } from "react";
+import { DataContext } from "../../context/dataContext";
 
 function StoredInvoice({ invoiceId, setIsLoading, setShowInvoice }) {
   const { invoices } = useContext(DataContext);
   const [invoice, setInvoice] = useState(null);
   const invoiceData = invoices;
-
-  console.log(invoiceId);
 
   useEffect(() => {
     if (invoiceId && invoiceData)
@@ -19,8 +16,8 @@ function StoredInvoice({ invoiceId, setIsLoading, setShowInvoice }) {
   }, [invoiceData, invoiceId]);
 
   const handleCloseInvoice = () => {
-    setShowInvoice(false);
     setIsLoading(true);
+    setShowInvoice(false);
   };
 
   if (!invoice) {
@@ -47,21 +44,18 @@ function StoredInvoice({ invoiceId, setIsLoading, setShowInvoice }) {
         </div>
         <div className={styles.invoiceBody}>
           {invoice.details.map((detail, index) => (
-            <>
-              <div className={styles.invoiceDetail} key={index}>
-                <span className={styles.detailQuantity}>{detail.quantity}</span>
-                <span className={styles.detailProduct}>{detail.product}</span>
-                <span className={styles.itemPrice}>{detail.itemPrice}</span>
-                <span className={styles.totalItem}>{detail.totalItem}</span>
-              </div>
-
-              <div className={styles.invoiceFooter}>
-                <span className={styles.totalItems}>{invoice.subtotal}</span>
-                <span className={styles.taxes}>{invoice.taxes}</span>
-                <span className={styles.total}>{invoice.total}</span>
-              </div>
-            </>
+            <div className={styles.invoiceDetail} key={index}>
+              <span className={styles.detailQuantity}>{detail.quantity}</span>
+              <span className={styles.detailProduct}>{detail.product}</span>
+              <span className={styles.itemPrice}>{detail.itemPrice}</span>
+              <span className={styles.totalItem}>{detail.totalItem}</span>
+            </div>
           ))}
+          <div className={styles.invoiceFooter}>
+            <span className={styles.totalItems}>{invoice.subtotal}</span>
+            <span className={styles.taxes}>{invoice.taxes}</span>
+            <span className={styles.total}>{invoice.total}</span>
+          </div>
         </div>
       </div>
     </section>
