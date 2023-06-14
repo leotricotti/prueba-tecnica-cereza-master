@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../../context/dataContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,7 +10,11 @@ import styles from "./invoiceItem.module.css";
 
 function InvoiceItem({ handleShowInvoice }) {
   const { invoices } = useContext(DataContext);
-  const sortedInvoices = invoices.invoices.sort((a, b) => b.number - a.number);
+  const [sortedInvoices, setSortedInvoices] = useState([]);
+
+  useEffect(() => {
+    setSortedInvoices(invoices.invoices.sort((a, b) => b.number - a.number));
+  }, [invoices]);
 
   return (
     <div className={styles.invoiceContainer}>
