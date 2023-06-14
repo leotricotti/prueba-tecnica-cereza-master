@@ -50,13 +50,13 @@ function StoredInvoice({ invoiceId, setIsLoading, setShowInvoice }) {
             <div className={styles.invoiceDetail} key={index}>
               <span className={styles.detailQuantity}>{detail.quantity}</span>
               <span className={styles.detailProduct}>{detail.product}</span>
-              <span className={styles.itemPrice}>{detail.itemPrice}.00</span>
-              <span className={styles.totalItem}>{detail.totalItem}.00</span>
+              <span className={styles.itemPrice}>{detail.itemPrice}</span>
+              <span className={styles.totalItem}>{detail.totalItem}</span>
             </div>
           ))}
 
           <div className={styles.invoiceFooter}>
-            <span className={styles.totalItems}>{invoice.subtotal}.00</span>
+            <span className={styles.totalItems}>{invoice.subtotal}</span>
             <span className={styles.taxes}>{invoice.taxes}</span>
             <span className={styles.total}>{invoice.total}</span>
           </div>
