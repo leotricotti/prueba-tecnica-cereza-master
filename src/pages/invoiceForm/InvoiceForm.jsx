@@ -24,14 +24,12 @@ function InvoiceForm() {
     customer: "",
     address: "",
     date: "",
-    details: Array(7)
-      .fill()
-      .map(() => ({
-        product: "",
-        itemPrice: "",
-        quantity: "",
-        totalItem: "",
-      })),
+    details: Array(selectedProducts.length).map(() => ({
+      product: "",
+      itemPrice: "",
+      quantity: "",
+      totalItem: "",
+    })),
     subtotal: "",
     taxes: "",
     total: "",
