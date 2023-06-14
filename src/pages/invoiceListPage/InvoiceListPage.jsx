@@ -1,11 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import styles from "./invoiceListPage.module.css";
 import Spinner from "../../components/spinner/Spinner";
+import { DataContext } from "../../context/dataContext";
 import InvoiceList from "../../components/invoiceList/InvoiceList";
 import StoredInvoice from "../../components/storedInvoice/StoredInvoice";
 import InvoiceListHeader from "../../components/invoiceListHeader/InvoiceListHeader";
 
-function InvoicesListPages({ invoices }) {
+function InvoicesListPages() {
+  const { invoices } = useContext(DataContext);
   const [invoiceId, setInvoiceId] = useState("");
   const [showForm, setShowForm] = useState(false);
   const [isLoading, setIsLoading] = useState(true);

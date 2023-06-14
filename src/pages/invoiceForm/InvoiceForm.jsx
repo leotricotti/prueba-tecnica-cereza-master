@@ -1,6 +1,7 @@
 import { useEffect, useContext, useState } from "react";
 import Swal from "sweetalert2";
 import styles from "./invoiceForm.module.css";
+import { useNavigate } from "react-router-dom";
 import Spinner from "../../components/spinner/Spinner";
 import { DataContext } from "../../context/dataContext";
 import FormBody from "../../components/formBody/FormBody";
@@ -9,6 +10,7 @@ import FormHeader from "../../components/formHeader/FormHeader";
 import FormHeaderMain from "../../components/formHeaderMain/FormHeadeMain";
 
 function InvoiceForm() {
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const localDate = new Date().toLocaleDateString();
   const [invoiceNumber, setInvoiceNumber] = useState(parseInt(0));
@@ -92,6 +94,7 @@ function InvoiceForm() {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire("Información guardada con exito", "", "success");
+        navigate("/");
         onSaveInvoice(invoiceData);
       }
     });
