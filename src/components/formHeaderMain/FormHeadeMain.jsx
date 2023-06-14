@@ -15,7 +15,7 @@ function FormHeaderMain({ handleSubmit }) {
           />
           <span className={styles.separador}>/</span>
           <Button
-            text="Cancelar"
+            text="Salir"
             link={"/"}
             styles={`${styles.button} ${styles.cancel}`}
           />
