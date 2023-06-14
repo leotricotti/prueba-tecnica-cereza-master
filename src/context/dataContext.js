@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import invoiceData from "../assets/data/invoiceData.json";
 
 const DataContext = createContext();
@@ -8,8 +8,6 @@ const DataProvider = ({ children }) => {
   const [productList, setProductList] = useState([]);
   const [matchingOptions, setMatchingOptions] = useState([]);
   const [selectedProducts, setSelectedProducts] = useState([]);
-
-  console.log(invoices);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,16 +23,16 @@ const DataProvider = ({ children }) => {
     fetchData();
   }, []);
 
+  console.log(invoices);
+
   useEffect(() => {
-    localStorage.setItem("invoices", JSON.stringify(invoiceData));
-    const storedInvoices = JSON.parse(localStorage.getItem("invoices"));
-    if (storedInvoices) {
-      setInvoices(storedInvoices);
-    }
+    const storedInvoices =
+      JSON.parse(localStorage.getItem("invoices")) || invoiceData;
+    setInvoices(storedInvoices);
   }, []);
 
   const onSaveInvoice = (newInvoice) => {
-    const updatedInvoices = [...invoices.invoices, newInvoice];
+    const updatedInvoices = { invoices: [...invoices.invoices, newInvoice] };
     setInvoices(updatedInvoices);
 
     localStorage.setItem("invoices", JSON.stringify(updatedInvoices));
@@ -46,8 +44,8 @@ const DataProvider = ({ children }) => {
     matchingOptions,
     selectedProducts,
     onSaveInvoice,
-    setSelectedProducts,
     setMatchingOptions,
+    setSelectedProducts,
   };
   return <DataContext.Provider value={value}>{children}</DataContext.Provider>;
 };

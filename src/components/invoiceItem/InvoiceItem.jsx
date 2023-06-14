@@ -10,7 +10,9 @@ import styles from "./invoiceItem.module.css";
 
 function InvoiceItem({ handleShowInvoice }) {
   const { invoices } = useContext(DataContext);
-  const sortedInvoices = invoices.invoices?.sort((a, b) => b.number - a.number);
+  const sortedInvoices = invoices.invoices.sort((a, b) => b.number - a.number);
+
+  console.log(invoices.invoices);
 
   return (
     <div className={styles.invoiceContainer}>
