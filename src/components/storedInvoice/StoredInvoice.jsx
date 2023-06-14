@@ -43,14 +43,16 @@ function StoredInvoice({ invoiceId, setIsLoading, setShowInvoice }) {
           <span className={styles.invoiceAddress}>{invoice.address}</span>
         </div>
         <div className={styles.invoiceBody}>
-          {invoice.details.map((detail, index) => (
-            <div className={styles.invoiceDetail} key={index}>
-              <span className={styles.detailQuantity}>{detail.quantity}</span>
-              <span className={styles.detailProduct}>{detail.product}</span>
-              <span className={styles.itemPrice}>{detail.itemPrice}</span>
-              <span className={styles.totalItem}>{detail.totalItem}</span>
-            </div>
-          ))}
+          <div className={styles.invoiceDetail}>
+            {invoice.details.map((detail, index) => (
+              <div className={styles.details} key={index}>
+                <span className={styles.detailQuantity}>{detail.quantity}</span>
+                <span className={styles.detailProduct}>{detail.product}</span>
+                <span className={styles.itemPrice}>{detail.itemPrice}</span>
+                <span className={styles.totalItem}>{detail.totalItem}</span>
+              </div>
+            ))}
+          </div>
           <div className={styles.invoiceFooter}>
             <span className={styles.totalItems}>{invoice.subtotal}</span>
             <span className={styles.taxes}>{invoice.taxes}</span>
